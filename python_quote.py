@@ -26,7 +26,9 @@ def rearange_input():
 		array.remove(item)
 	return result_array
 
-
+def list_to_string(list):
+	string = " "
+	return string.join(list)
 
 
 
@@ -34,4 +36,5 @@ if __name__ == '__main__':
 	quote = random_python_quote()
 	print(quote)
 	rearange = rearange_input()
-	print(rearange)
+	join_string = list_to_string(rearange)
+	print(join_string)
