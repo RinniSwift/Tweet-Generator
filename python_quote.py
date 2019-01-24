@@ -16,9 +16,7 @@ def rearange_input():
 		randomly append item to a new array and remove it from the one you are looping through
 		OR random.randint
 	'''
-	array = []
-	for i in range(1, len(sys.argv)):
-		array.append(sys.argv[i])
+	array = sys.argv[1:]
 
 
 	result_array = []
@@ -27,6 +25,8 @@ def rearange_input():
 		result_array.append(item)
 		array.remove(item)
 	return result_array
+
+
 
 
 
