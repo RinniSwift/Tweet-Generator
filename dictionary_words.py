@@ -8,10 +8,10 @@ import sys
 import random
 
 def generate_sentnce_from_dict(file):
-	word_count = sys.argv[1]						# get the number of words passed in as the terminal input
+	word_count = sys.argv[1]							# get the number of words passed in as the terminal input
 	string = ""
 
-	with open(file, 'r') as f:						# use the 'with' keyword to make sure you close the file after
+	with open(file, 'r') as f:							# use the 'with' keyword to make sure you close the file after
 		file_content = f.read()
 
 	for i in range(0, int(word_count)):					# loop through n amount of times to add words to the string
