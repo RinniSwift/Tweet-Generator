@@ -17,14 +17,34 @@ def histogram(file):
 	# return a histogram with the count of word frequency
 	return histogram
 
-
-
 def unique_words(histogram):
-	print("something")
+	return len(histogram)
 
-def frequency(word):
-	print("something")
+def frequency(word, histogram):
+	return histogram[word]
+
+
+
+
+
+def most_frequent_count(histogram):
+	# use the reduce function to compare all values of the histogram and return the key/keys with the largest values.
+	current_largest = 1
+	most_frequent_word = ""
+	for key, value in histogram.items():
+		if value >= current_largest:
+			current_largest = value
+			most_frequent_word = key
+
+	return most_frequent_word, current_largest
 
 
 if __name__ == "__main__":
 	print(histogram('BreakfastAtTiffanys.txt'))
+	print(frequency('love', histogram('BreakfastAtTiffanys.txt')))
+	print(unique_words(histogram('BreakfastAtTiffanys.txt')))
+	print(most_frequent_count(histogram('BreakfastAtTiffanys.txt')))
+
+
+
+# create a class called histogram and put the functions in
