@@ -18,7 +18,11 @@ def histogram(file):
 	return histogram
 
 def unique_words(histogram):
-	return len(histogram)
+	unique_count = 0
+	for key, value in histogram.items():
+		if value == 1:
+			unique_count += 1
+	return unique_count
 
 def frequency(word, histogram):
 	return histogram[word]
@@ -41,8 +45,8 @@ def most_frequent_count(histogram):
 
 if __name__ == "__main__":
 	print(histogram('BreakfastAtTiffanys.txt'))
-	print(frequency('love', histogram('BreakfastAtTiffanys.txt')))
-	print(unique_words(histogram('BreakfastAtTiffanys.txt')))
+	print("frequency of word: ", frequency('love', histogram('BreakfastAtTiffanys.txt')))
+	print("unique words: ", unique_words(histogram('BreakfastAtTiffanys.txt')))
 	print(most_frequent_count(histogram('BreakfastAtTiffanys.txt')))
 
 
