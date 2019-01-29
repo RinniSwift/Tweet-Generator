@@ -16,16 +16,23 @@ def generate_sentnce_from_dict(file):
 	with open(file, 'r') as f:							
 		file_content = f.read()
 
-	# loop through n amount of times to add words to the string
-	for i in range(0, int(word_count)):		
-		# split all words in the file			
-		lines = file_content.split()
-		# randomize a number from 0 to the length of the file word count					
-		random_line = random.randrange(0, len(lines))
-		# append the files index to the string	
-		string += (lines[random_line] + " ")			
+	# split all words in the file			
+	lines = file_content.split()
 
-	return string
+
+	words = random.choices(lines, k=int(word_count))
+	return " ".join(words)
+
+
+
+	# loop through n amount of times to add words to the string
+	# for i in range(0, int(word_count)):
+	# 	# randomize a number from 0 to the length of the file word count					
+	# 	random_line = random.randrange(0, len(lines))
+	# 	# append the files index to the string	
+	# 	string += (lines[random_line] + " ")			
+
+	# return string
 
 
 
