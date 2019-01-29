@@ -6,14 +6,16 @@ def cow_say_text():
 
 	text = sys.argv[1:]
 
-	string = ""
+	string = " "
+	string2 = " "
 	words = " ".join(text)
-	for i in range(0, len(words)):
+	for i in range(0, len(words) + 2):
 		string += "_"
+		string2 += "-"
 
 	print(string)
-	print(words)
-	print(string)
+	print("< " + words + " >")
+	print(string2)
 
 
 	print("""
