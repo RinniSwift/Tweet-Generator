@@ -36,6 +36,16 @@ def rearange_input():
 
 
 
+def reverse_words():
+	array = sys.argv[0:]
+	new_array = []
+
+	for i in range(len(array) - 1, 0, -1):
+		new_array.append(array[i])
+
+	return new_array
+
+
 def list_to_string(list):
 	string = " "
 	return string.join(list)
@@ -48,3 +58,4 @@ if __name__ == '__main__':
 	rearange = rearange_input()
 	join_string = list_to_string(rearange)
 	print(join_string)
+	print(reverse_words())
