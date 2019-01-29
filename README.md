@@ -20,3 +20,9 @@ This is a repo that randomly generates tweets using Markov models.
 2. returns all the words that are unique in the text file
 3. returns the amount of times a given word has appeared in the text file
 4. returns the most frequent word used in the text file
+
+
+## [cowsay.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/cowsay.py)
+*The above file demonstrates*
+1. a script that imitates cowsay
+2. how to format strings with a given input
