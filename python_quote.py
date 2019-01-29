@@ -11,20 +11,26 @@ def random_python_quote():
 
 
 def rearange_input():
-	'''
-		append all users input items into a list
-		randomly append item to a new array and remove it from the one you are looping through
-		OR random.randint
-	'''
+	# append all users input items into a list
+
 	array = sys.argv[1:]
 
-
+	'''
 	result_array = []
 	for i in range(1, len(sys.argv)):
 		item = random.choice(array)
 		result_array.append(item)
 		array.remove(item)
 	return result_array
+	'''
+
+	for i in range(len(array)):
+		rand_int = random.randint(0, len(array) - 1)
+		array[rand_int], array[i] = array[i], array[rand_int]
+
+	return array
+
+
 
 def list_to_string(list):
 	string = " "
