@@ -16,6 +16,10 @@ def rearange_input():
 	array = sys.argv[1:]
 
 	'''
+	return random.sample(array, len(array))
+	'''
+
+	'''
 	result_array = []
 	for i in range(1, len(sys.argv)):
 		item = random.choice(array)
