@@ -13,3 +13,10 @@ This is a repo that randomly generates tweets using Markov models.
 1. returns random sentence with n amount of words (from the terminal input) from the dictionary file on our computer
 2. how to read files in python
 3. how to split words into an array of words from a file
+
+## [histogram_word_count.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/histogram_word_count.py)
+*The above file demonstrates:*
+1. returns a histogram that displays the word and the number of times it appeared in a given text file (*dictionary*)
+2. returns all the words that are unique in the text file
+3. returns the amount of times a given word has appeared in the text file
+4. returns the most frequent word used in the text file
