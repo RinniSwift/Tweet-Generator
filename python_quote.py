@@ -47,8 +47,8 @@ def reverse_words():
 
 
 def list_to_string(list):
-	string = " "
-	return string.join(list)
+	# returns string format with words from an array seperated by spaces
+	return " ".join(list)
 
 
 
@@ -58,4 +58,6 @@ if __name__ == '__main__':
 	rearange = rearange_input()
 	join_string = list_to_string(rearange)
 	print(join_string)
-	print(reverse_words())
+	
+	reverse_word_order = reverse_words()
+	print(list_to_string(reverse_word_order))
