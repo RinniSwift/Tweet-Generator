@@ -13,6 +13,7 @@ This is a repo that randomly generates tweets using Markov models.
 1. returns random sentence with n amount of words (from the terminal input) from the dictionary file on our computer
 2. how to read files in python
 3. how to split words into an array of words from a file
+4. returns a plain string to a sentence format with capital letter at the front and full stop at the end
 
 ## [histogram_word_count.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/histogram_word_count.py)
 *The above file demonstrates:*
