@@ -7,7 +7,7 @@
 import sys
 import random
 
-def generate_sentnce_from_dict(file):
+def generate_sentence_from_dict(file):
 	# get the number of words passed in as the terminal input
 	word_count = sys.argv[1]							
 	string = ""
@@ -18,7 +18,6 @@ def generate_sentnce_from_dict(file):
 
 	# split all words in the file			
 	lines = file_content.split()
-
 
 	words = random.choices(lines, k=int(word_count))
 	return " ".join(words)
@@ -35,8 +34,10 @@ def generate_sentnce_from_dict(file):
 	# return string
 
 
+def sentence_form(string):
+	return string.capitalize() + "."
 
 
 if __name__ == "__main__":
-	generate_words = generate_sentnce_from_dict('/usr/share/dict/words')
-	print(generate_words)
+	generate_words = generate_sentence_from_dict('/usr/share/dict/words')
+	print(sentence_form(generate_words))
