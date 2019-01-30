@@ -1,6 +1,9 @@
 
 def histogram(file):
 
+	# *** how to remove ',.' at the end of words ***
+	# DICTIONARY APPROACH
+
 	histogram = {}
 
 	with open(file, 'r') as f:
@@ -17,6 +20,39 @@ def histogram(file):
 	# return a histogram with the count of word frequency
 	return histogram
 
+def histogram_list_of_lists(file):
+
+	histogram = []
+
+	with open(file, 'r') as f:
+		file_content = f.read()
+	words = file_content.split()
+	
+	# loop through indexes of the word file
+	for i in range(len(words)):
+		word_found = False
+		# if histogram is not empty
+		if histogram:
+			# loop through the indexes of the histogram
+			for j in range(len(histogram)):
+				# if the word contains in the histogram
+				if histogram[j][0] == words[i]:
+					# add the count by one
+					histogram[j][1] += 1
+					word_found = True
+					break 
+
+			if not word_found:
+				histogram.append([words[i], 1])
+
+		# if histogram is empty
+		else:
+			histogram.append([words[i], 1])
+
+	return histogram
+
+
+
 def unique_words(histogram):
 	unique_count = 0
 	for key, value in histogram.items():
@@ -24,11 +60,9 @@ def unique_words(histogram):
 			unique_count += 1
 	return unique_count
 
+
 def frequency(word, histogram):
 	return histogram[word]
-
-
-
 
 
 def most_frequent_count(histogram):
@@ -40,14 +74,16 @@ def most_frequent_count(histogram):
 			current_largest = value
 			most_frequent_word = key
 
-	return most_frequent_word, current_largest
+	return ("Most frequent word: \"" + most_frequent_word + "\", "+ str(current_largest) + " times")
+
 
 
 if __name__ == "__main__":
-	print(histogram('BreakfastAtTiffanys.txt'))
-	print("frequency of word: ", frequency('love', histogram('BreakfastAtTiffanys.txt')))
-	print("unique words: ", unique_words(histogram('BreakfastAtTiffanys.txt')))
+	histogram('BreakfastAtTiffanys.txt')
+	print("frequency of word the word \"love\": ", frequency('love', histogram('BreakfastAtTiffanys.txt')))
+	print("unique word count: ", unique_words(histogram('BreakfastAtTiffanys.txt')))
 	print(most_frequent_count(histogram('BreakfastAtTiffanys.txt')))
+	print(histogram_list_of_lists('BreakfastAtTiffanys.txt'))
 
 
 
