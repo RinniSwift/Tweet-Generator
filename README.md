@@ -27,3 +27,8 @@ This is a repo that randomly generates tweets using Markov models.
 *The above file demonstrates*
 1. a script that imitates cowsay
 2. how to format strings with a given input
+
+
+## [autocomplete.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/autocomplete.py)
+*The above file demonstrates*
+1. how to return complete words that start with a given letter or letter sequence
