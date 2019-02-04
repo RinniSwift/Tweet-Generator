@@ -2,6 +2,10 @@
 
 This is a repo that randomly generates tweets using Markov models.
 
+## [sample.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/sample.py)
+*The above file demonstrates:*
+1. how to random a word from a text by the possibility of how often they show up in the text.
+
 ## [python_quote.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/python_quote.py)
 *The above file demonstrates:*
 1. returns random word from array that contains words
