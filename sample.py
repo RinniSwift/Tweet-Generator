@@ -37,10 +37,15 @@ def sample_word():
 
 def test_sample_word():
 
-	histogram = {"one": 0, "fish": 0, "two": 0, "green": 0, "blue": 0}
+	histogram = {}
 
 	for i in range(0, 1000):
-		histogram[sample_word()] += 1
+		sample = sample_word()
+		# append the word count found by one or add to the word count found
+		if sample in histogram:
+			histogram[sample] += 1
+		else:
+			histogram[sample] = 1
 
 	return histogram
 
