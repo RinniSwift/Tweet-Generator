@@ -22,21 +22,9 @@ def sample_word():
 
 	random_number = random.random()
 	print(random_number)
-	# answer = ""
 	for key, value in new_histogram.items():
 		if value[0] < random_number < value[1]:
 			return key
-
-	# if answer == "":
-	# 	return 0
-	# else:
-	# 	return answer
-
-
-
-	
-
-
 
 	# print("histogramm: ", histogramm)
 	# print("histogram_probability: ", histogram_probability)
