@@ -24,7 +24,7 @@ def sample_word():
 
 	# random a number from 0...1
 	random_number = random.random()
-	print(random_number)
+	# print(random_number)
 	# check if the random number is between the value[0] and value[1] of the dictionary
 	# if is, the possibility has fallen into that word, return the word
 	for key, value in new_histogram.items():
@@ -34,7 +34,21 @@ def sample_word():
 	# print("histogramm: ", histogramm)
 	# print("histogram_probability: ", histogram_probability)
 	# print("possibilities: ", possibilities)
+
+def test_sample_word():
+
+	histogram = {"one": 0, "fish": 0, "two": 0, "green": 0, "blue": 0}
+
+	for i in range(0, 1000):
+		histogram[sample_word()] += 1
+
+	return histogram
+
 	
 
 if __name__ == "__main__":
 	print(sample_word())
+	print(test_sample_word())
+
+
+
