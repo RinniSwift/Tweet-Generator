@@ -4,6 +4,7 @@ def sample_word():
 
 	word_array = "one fish two fish green fish blue fish".split()
 
+	# create a dictionary which will store the word as the key and the frequency as the value
 	histogramm = {}
 	for word in word_array:
 		if word in histogramm.keys():
@@ -11,6 +12,8 @@ def sample_word():
 		else:
 			histogramm[word] = 1
 
+	# create a dictionary which will store the word as the key and the possibility it will occur in as an array as the value
+	# e.g. {'one': [0, 0.125], 'fish': [0.125, 0.625], ...}
 	count = 0
 	new_histogram = {}
 	for key, value in histogramm.items():
@@ -19,9 +22,11 @@ def sample_word():
 		count += posibil
 		new_histogram[key].append(count)
 
-
+	# random a number from 0...1
 	random_number = random.random()
 	print(random_number)
+	# check if the random number is between the value[0] and value[1] of the dictionary
+	# if is, the possibility has fallen into that word, return the word
 	for key, value in new_histogram.items():
 		if value[0] < random_number < value[1]:
 			return key
