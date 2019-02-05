@@ -1,14 +1,14 @@
 
-def histogram(file):
+def histogram_dict(file):
 
-	# *** how to remove ',.' at the end of words ***
-	# DICTIONARY APPROACH
+	# DICTIONARY APPROACH O(n)
 
 	histogram = {}
 
 	with open(file, 'r') as f:
 		text_content = f.read()
-	words = text_content.split()
+
+	words = text_content.lower().strip("(),!.?""/").split()
 
 	# loop through all words in the text file and check if the word contains in the histogram, make the count 1, or else add 1 to the previous count
 	for word in words:
@@ -22,42 +22,33 @@ def histogram(file):
 
 def histogram_list_of_lists(file):
 
+	# LIST APPROACH O(n^2)
+
 	histogram = []
 
 	with open(file, 'r') as f:
 		file_content = f.read()
 	words = file_content.split()
 
-	# loop through indexes of the word file
-	for i in range(len(words)):
+	for word in words:
 		word_found = False
-		# if histogram is not empty
-		if histogram:
-			# loop through the indexes of the histogram
-			for j in range(len(histogram)):
-				# if the word contains in the histogram
-				if histogram[j][0] == words[i]:
-					# add the count by one
-					histogram[j][1] += 1
-					word_found = True
-					break 
-
-			if not word_found:
-				histogram.append([words[i], 1])
-
-		# if histogram is empty
-		else:
-			histogram.append([words[i], 1])
+		for item in histogram:
+			if word == item[0]:
+				item[1] += 1
+				word_found = True
+				break
+		if not word_found:
+			histogram.append([word, 1])
 
 	return histogram
 
 
 def histogram_list_of_tuples(list_of_lists):
-	return tuple(list_of_lists)
-
-
-
-
+	# O(n^2)
+	tuple_histogram = []
+	for item in list_of_lists:
+		tuple_histogram.append(tuple(item))
+	return tuple_histogram
 
 
 def unique_words(histogram):
@@ -83,15 +74,19 @@ def most_frequent_count(histogram):
 
 	return ("Most frequent word: \"" + most_frequent_word + "\", "+ str(current_largest) + " times")
 
+def list_of_counts():
+	#implement the dictionary and reverse to list of counts
+	pass
 
 
 if __name__ == "__main__":
-	# histogram('BreakfastAtTiffanys.txt')
+
+	# print(histogram_dict('BreakfastAtTiffanys.txt'))
 	# print("frequency of word the word \"love\": ", frequency('love', histogram('BreakfastAtTiffanys.txt')))
 	# print("unique word count: ", unique_words(histogram('BreakfastAtTiffanys.txt')))
 	# print(most_frequent_count(histogram('BreakfastAtTiffanys.txt')))
-	# print(histogram_list_of_lists('BreakfastAtTiffanys.txt'))
-	print(histogram_list_of_tuples(histogram_list_of_lists('BreakfastAtTiffanys.txt')))
+	print(histogram_list_of_lists('BreakfastAtTiffanys.txt'))
+	# print(histogram_list_of_tuples(histogram_list_of_lists('BreakfastAtTiffanys.txt')))
 
 
 
