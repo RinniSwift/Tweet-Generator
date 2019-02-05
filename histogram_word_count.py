@@ -98,18 +98,45 @@ def most_frequent_count(histogram):
 
 def list_of_counts():
 	#implement the dictionary and reverse to list of counts
-	pass
+	# loop through dict in dictionary, add the dict[1] item to the first index in the new_tuple_list
+	# as (dict[1], [dict[0]]). if dict[1] is in new_tuple_list, append the dict[0] in the tuple value
+
+	dictionary = {'one': 1, 'blue': 1, 'two': 1, 'fish': 4, 'red': 1}
+
+	new_tuple_list = []
+
+	# new_tuple_list.append((1, ["one"]))
+	# for item in new_tuple_list:
+	# 	if item[0] == 1:
+	# 		item[1].append("hi")
+
+
+	for key, value in dictionary.items():
+		found = False
+		for item in new_tuple_list:
+			if value == item[0]:
+				found = True
+				array = item[1]
+				array.append(key)
+				new_tuple_list.remove(item)
+				new_tuple_list.append((value, array))
+				break
+		if not found:
+			new_tuple_list.append((value, [key]))
+
+	return new_tuple_list
 
 
 if __name__ == "__main__":
 
-	word_array = file_to_word_array('BreakfastAtTiffanys.txt')
+	# word_array = file_to_word_array('BreakfastAtTiffanys.txt')
 	# print(histogram_dict('BreakfastAtTiffanys.txt'))
 	# print("frequency of word the word \"love\": ", frequency('love', histogram('BreakfastAtTiffanys.txt')))
 	# print("unique word count: ", unique_words(histogram('BreakfastAtTiffanys.txt')))
 	# print(most_frequent_count(histogram('BreakfastAtTiffanys.txt')))
 	# print(histogram_list_of_lists('BreakfastAtTiffanys.txt'))
-	print(histogram_list_of_tuples(word_array))
+	# print(histogram_list_of_tuples(word_array))
+	print(list_of_counts())
 
 
 
