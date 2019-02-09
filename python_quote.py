@@ -1,11 +1,14 @@
 import random
 import sys
 
-quotes = ("It's just a flesh wound.", 
+
+
+def random_python_quote():
+
+	quotes = ("It's just a flesh wound.", 
 		  "He's not the Messiah. He's a very naughty boy!",
           "THIS IS AN EX-PARROT!!")
 
-def random_python_quote():
 	rand_ind = random.randint(0, len(quotes) - 1)
 	return quotes[rand_ind]
 
@@ -46,18 +49,18 @@ def reverse_words():
 	return new_array
 
 
-def list_to_string(list):
-	# returns string format with words from an array seperated by spaces
-	return " ".join(list)
+def list_to_sentence(list):
+	'''returns sentence from an array of words'''
+	return " ".join(list) 
 
 
 
 if __name__ == '__main__':
 	quote = random_python_quote()
-	print(quote)
-	rearange = rearange_input()
-	join_string = list_to_string(rearange)
-	print(join_string)
+	# print(quote)
+	rearange_arr = rearange_input()
+	join_string = list_to_sentence(rearange_arr)
+	# print(join_string)
 	
 	reverse_word_order = reverse_words()
-	print(list_to_string(reverse_word_order))
+	print(list_to_sentence(reverse_word_order))
