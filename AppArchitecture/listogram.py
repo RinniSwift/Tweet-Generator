@@ -23,16 +23,35 @@ class Listogram(list):
         for item in self():
             if item[0] == word:
                 item[1] += 1
+                self.tokens += 1
             else:
                 self.append([word, 1])
+                self.types += 1
+                self.tokens += 1
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
+        found = False
+        for item in self:
+            if item[0] == word:
+                found = True
+                return item[1]
+
+        if found == False:
+            return 0
+
 
     def __contains__(self, word):
         """Return boolean indicating if given word is in this histogram."""
         # TODO: Check if word is in this histogram
+        found = False
+        for item in self:
+            if item[0] == word:
+                return True
+
+        if found == False:
+            return False
 
     def _index(self, target):
         """Return the index of entry containing given target word if found in
