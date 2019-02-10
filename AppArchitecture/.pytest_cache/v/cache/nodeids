@@ -1,0 +1,8 @@
+[
+  "dictogram_test.py::DictogramTest::test_add_count",
+  "dictogram_test.py::DictogramTest::test_contains",
+  "dictogram_test.py::DictogramTest::test_entries",
+  "dictogram_test.py::DictogramTest::test_frequency",
+  "dictogram_test.py::DictogramTest::test_tokens",
+  "dictogram_test.py::DictogramTest::test_types"
+]
