@@ -39,5 +39,5 @@ This is a repo that randomly generates tweets using Markov models.
 
 
 ## [appArchitect](https://github.com/RinniSwift/Tweet-Generator/tree/master/AppArchitecture)
-*[dictogram.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/dictogram.py)*
+**[dictogram.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/dictogram.py)**
 *class for creating a dictogram. (histogram which is implemented as a subclass of dict type)*
