@@ -19,14 +19,16 @@ class Listogram(list):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
-        for item in self():
+        found = False
+        for item in self:
             if item[0] == word:
+                found = True
                 item[1] += 1
                 self.tokens += 1
-            else:
-                self.append([word, 1])
-                self.types += 1
-                self.tokens += 1
+        if found == False:
+            self.append([word, 1])
+            self.types += 1
+            self.tokens += 1
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
@@ -79,7 +81,8 @@ def main():
     else:
         # Test histogram on letters in a word
         word = 'abracadabra'
-        print_histogram(list(word))
+
+        print_histogram(word.split())
         # Test histogram on words in a classic book title
         fish_text = 'one fish two fish red fish blue fish'
         print_histogram(fish_text.split())
@@ -89,5 +92,5 @@ def main():
         print_histogram(woodchuck_text.split())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
