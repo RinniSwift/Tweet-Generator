@@ -31,14 +31,11 @@ class Listogram(list):
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
-        found = False
         for item in self:
             if item[0] == word:
-                found = True
                 return item[1]
 
-        if found == False:
-            return 0
+        return 0
 
 
     def __contains__(self, word):
@@ -56,7 +53,10 @@ class Listogram(list):
         """Return the index of entry containing given target word if found in
         this histogram, or None if target word is not found."""
         # TODO: Implement linear search to find index of entry with target word
-
+        for i in rang(len(self)):
+            if self[i][0] == target:
+                return i
+        return None
 
 def print_histogram(word_list):
     print('word list: {}'.format(word_list))
