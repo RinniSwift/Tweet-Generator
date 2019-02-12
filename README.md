@@ -55,6 +55,8 @@ This is a repo that randomly generates tweets using Markov models.
 2. **[procfile](https://github.com/RinniSwift/Tweet-Generator/blob/master/Procfile)**
 *determining we want to use 4 worker threads in our flask app*
 3. **[app.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/app.py)**
+*where heroku reads to display content on the web page*
 4. **[requirements.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/requirements.txt)**
+*app requirements*
 5. **[runtime.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/runtime.txt)**
 *indicates what python version to use*
