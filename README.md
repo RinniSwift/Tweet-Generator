@@ -45,3 +45,16 @@ This is a repo that randomly generates tweets using Markov models.
 *test cases for the dictogram.*
 3. **[listogram.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/listogram.py)**
 *class for creating a listogram. (histogram which is implemented as a subclass of list type)*
+4. **[listogram_test.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/listogram_test.py)**
+*test cases for listogram.*
+
+
+## virtualenv
+*web environmental setup with virtualenv tool*
+1. **[venv](https://github.com/RinniSwift/Tweet-Generator/tree/master/venv)**
+2. **[procfile](https://github.com/RinniSwift/Tweet-Generator/blob/master/Procfile)**
+*determining we want to use 4 worker threads in our flask app*
+3. **[app.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/app.py)**
+4. **[requirements.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/requirements.txt)**
+5. **[runtime.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/runtime.txt)**
+*indicates what python version to use*
