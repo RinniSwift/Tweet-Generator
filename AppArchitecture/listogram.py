@@ -30,15 +30,6 @@ class Listogram(list):
         if not found:
             self.types += 1
             self.append([word, count])
-                
-
-        # self.tokens += count
-        # for item in self:
-        #     if item[0] == word:
-        #         item[1] += count
-        #         return
-        # self.types += count
-        # self.append([word, count])
         
 
     def frequency(self, word):
