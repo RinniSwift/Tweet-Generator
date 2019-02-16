@@ -73,6 +73,7 @@ class LinkedList(object):
                 node = node.next
             else:
                 node.next.data = item
+                self.tail = item
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
@@ -86,6 +87,11 @@ class LinkedList(object):
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find item where quality(item) is True
         # TODO: Check if node's data satisfies given quality function
+        for node in self:
+            if quality(node.data):
+                return node.data
+            else:
+                return "{} Does not satisfy given quality".format(node.data)
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
