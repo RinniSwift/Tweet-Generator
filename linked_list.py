@@ -16,6 +16,7 @@ class LinkedList(object):
         """Initialize this linked list and append the given items, if any."""
         self.head = None  # First node
         self.tail = None  # Last node
+        self.lengthh = 0  # length of items in linked list
         # Append given items
         if items is not None:
             for item in items:
@@ -54,18 +55,21 @@ class LinkedList(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
 
-        count = 0
-        node = self.head
-        while node is not None:
-            count += 1
-            node = node.next
-        return count
+        # count = 0
+        # node = self.head
+        # while node is not None:
+        #     count += 1
+        #     node = node.next
+        # return count
+
+        return self.lengthh
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
         # TODO: Append node after tail, if it exists
+        self.lengthh += 1
         new_node = Node(item)
         tail = self.tail
         if self.head is None:
@@ -80,6 +84,7 @@ class LinkedList(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
         # TODO: Prepend node before head, if it exists
+        self.lengthh += 1
         node = Node(item)
         if self.head == None:
             self.head = node
@@ -100,8 +105,7 @@ class LinkedList(object):
         while node != None:
             if quality(node.data):
                 return node.data
-            else:
-                node = node.next
+            node = node.next
         return None
 
 
@@ -113,11 +117,12 @@ class LinkedList(object):
         # TODO: Update previous node to skip around node with matching data
         # TODO: Otherwise raise error to tell user that delete has failed
         # Hint: raise ValueError('Item not found: {}'.format(item))
+        
         curr_node = self.head
         previous = None
         while curr_node:
             if curr_node.data == item:
-
+                self.lengthh -= 1
                 if previous:
                     if curr_node == self.tail:
                         self.tail = previous
@@ -132,6 +137,18 @@ class LinkedList(object):
             curr_node = curr_node.next
 
         raise ValueError('Item not found: {}'.format(item))
+
+    def replace(self, old_item, new_item):
+        '''Replace the given item with a different item'''
+        # TODO: Loop through the items in the linked list
+        # TODO: Find the data you want to replace
+        curr_node = self.head
+        while curr_node:
+            if curr_node.data == old_item:
+                curr_node.data = new_item
+                break
+            else:
+                curr_node = curr_node.next
 
 
 def test_linked_list():
