@@ -59,8 +59,8 @@ class HashTable(object):
         # TODO: Count number of key-value entries in each bucket
         count = 0
         for bucket in self.buckets:
-            for item in bucket:
-                count += 1
+            length = bucket.length()
+            count += length
         return count 
 
     def contains(self, key):
@@ -109,6 +109,13 @@ class HashTable(object):
         # TODO: If found, delete entry associated with given key
         # TODO: Otherwise, raise error to tell user delete failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
+        index = self._bucket_index(key)
+        entry_found = self.buckets[index].find(lambda item: item[0] == key)
+        if entry_found:
+            # entry exists
+            self.buckets[index].delete(entry_found)
+        else:
+            raise KeyError('Key not found: {}'.format(key))
 
 
 def test_hash_table():
