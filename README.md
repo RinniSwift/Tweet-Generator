@@ -47,6 +47,14 @@ This is a repo that randomly generates tweets using Markov models.
 *class for creating a listogram. (histogram which is implemented as a subclass of list type)*
 4. **[listogram_test.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/listogram_test.py)**
 *test cases for listogram.*
+5. **[linked_list.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/linked_list.py)**
+*class for creating a linked list.*
+6. **[linked_list_test.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/linked_list_test.py)**
+*test cases for lisnked list.*
+3. **[hashtable.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/hashtable.py)**
+*class for creating a hash table. (implements the linked list)*
+4. **[hashtable_test.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/hashtable_test.py)**
+*test cases for hash table.*
 
 
 ## virtualenv
