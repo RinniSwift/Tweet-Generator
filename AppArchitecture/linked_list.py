@@ -48,25 +48,20 @@ class LinkedList(object):
 
     def is_empty(self):
         """Return a boolean indicating whether this linked list is empty."""
+        # running time: O(1) to check the head variable
         return self.head is None
 
     def length(self):
         """Return the length of this linked list by traversing its nodes.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(1) to call the length variable if we have a variable that is stored that is updated in the append, prepend, and delete.
+        O(n) if we node traversal through the linked list."""
         # TODO: Loop through all nodes and count one for each
-
-        # count = 0
-        # node = self.head
-        # while node is not None:
-        #     count += 1
-        #     node = node.next
-        # return count
-
         return self.lengthh
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(1) best and worst case if used the tail variable becasue we are just changing the tail and the next variable of the linked list without looping through it
+        O(n) if we loop through the linkedlist until the end node in the case that we dont have a tail value."""
         # TODO: Create new node to hold given item
         # TODO: Append node after tail, if it exists
         self.lengthh += 1
@@ -81,7 +76,7 @@ class LinkedList(object):
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(1) best and worst case because we are just changing the head variable"""
         # TODO: Create new node to hold given item
         # TODO: Prepend node before head, if it exists
         self.lengthh += 1
@@ -97,8 +92,8 @@ class LinkedList(object):
 
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
-        TODO: Best case running time: O(???) Why and under what conditions?
-        TODO: Worst case running time: O(???) Why and under what conditions?"""
+        TODO: Best case running time: O(1) when the item is at the start or near the start of the linkedlist and we return immedietely
+        TODO: Worst case running time: O(n) if the item is near the end of the linkedlist or when it is not present"""
         # TODO: Loop through all nodes to find item where quality(item) is True
         # TODO: Check if node's data satisfies given quality function
         node = self.head
@@ -111,8 +106,8 @@ class LinkedList(object):
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
-        TODO: Best case running time: O(???) Why and under what conditions?
-        TODO: Worst case running time: O(???) Why and under what conditions?"""
+        TODO: Best case running time: O(1) when the linked list is empty or the item to delete is in the beginnning of the linked list
+        TODO: Worst case running time: O(n) when you have to traverse through the entire linked list to get to the one you want to delete or loop far into the list to delete"""
         # TODO: Loop through all nodes to find one whose data matches given item
         # TODO: Update previous node to skip around node with matching data
         # TODO: Otherwise raise error to tell user that delete has failed
@@ -139,7 +134,9 @@ class LinkedList(object):
         raise ValueError('Item not found: {}'.format(item))
 
     def replace(self, old_item, new_item):
-        '''Replace the given item with a different item'''
+        '''Replace the given item with a different item
+        TODO: Best case running time: O(1) where you dont have to loop through a lot of them
+        TODO: Worst case runnning time O(n) where you have to loop through the entire linked list'''
         # TODO: Loop through the items in the linked list
         # TODO: Find the data you want to replace
         curr_node = self.head
