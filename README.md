@@ -68,7 +68,3 @@ This is a repo that randomly generates tweets using Markov models.
 *app requirements*
 5. **[runtime.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/runtime.txt)**
 *indicates what python version to use*
-
-## [linked_list.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/linked_list.py)
-*The above file demonstrates*
-1. how to implement a linked list class
