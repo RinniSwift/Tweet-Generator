@@ -1,7 +1,6 @@
 from flask import Flask
 
 import markov
-import string
 
 app = Flask(__name__)
 
