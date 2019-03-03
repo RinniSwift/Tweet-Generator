@@ -80,7 +80,6 @@ def first_markov_chain(listt):
 	'''
 
 def generate_sentence(first_mark):
-	pass
 	final_sent = ""
 	times = 0
 
@@ -110,7 +109,7 @@ def generate_sentence(first_mark):
 
 		times += 1
 
-	print("final sentence: {}".format(final_sent))
+	return final_sent
 
 
 
@@ -120,7 +119,7 @@ if __name__ == "__main__":
 	word_array = sentence_to_word_list(sent)
 	mark = first_markov_chain(word_array)
 	print(mark)
-	generate_sentence(mark)
+	print(generate_sentence(mark))
 
 	# new_sent = 'Hi my name is Rinni my bestfriend is Sarin and we love each other so much'
 	# new_word_array = sentence_to_word_list(new_sent)
@@ -129,7 +128,7 @@ if __name__ == "__main__":
 	neww_sent = 'I like cats and you like cats I like dogs but you hate dogs'
 	neww_word_array = sentence_to_word_list(neww_sent)
 	markk = first_markov_chain(neww_word_array)
-	generate_sentence(markk)
+	print(generate_sentence(markk))
 
 	
 
