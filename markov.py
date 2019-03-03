@@ -1,12 +1,12 @@
 import random
 
-def read_file(path):
+def file_to_word_list(path):
 
 	with open(path, 'r') as f:
 		contents = f.read()
 		contents = contents.replace(".", "").replace(",","").replace("*", "").replace(string.punctuation, "").replace("?", "").replace("!", "").replace(";", "").replace(":", "")
 
-	return contents
+	return contents.split()
 
 def sentence_to_word_list(sentence):
 	return sentence.split()
