@@ -1,4 +1,5 @@
 import random
+import string
 
 def file_to_word_list(path):
 
