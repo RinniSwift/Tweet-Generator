@@ -96,6 +96,9 @@ def generate_sentence(first_mark):
 				if count >= random_number:
 					curr_word = key
 
+		elif len(dict_of_next_words) == 0:
+			curr_word = random.choice(list(first_mark.keys()))
+
 		times += 1
 
 	print("final sentence: {}".format(final_sent))
@@ -104,11 +107,11 @@ def generate_sentence(first_mark):
 
 
 if __name__ == "__main__":
-	# sent = 'one fish two fish red fish blue fish'
-	# word_array = sentence_to_word_list(sent)
-	# mark = first_markov_chain(word_array)
-	# print(mark)
-	# generate_sentence(mark)
+	sent = 'one fish two fish red fish blue fish'
+	word_array = sentence_to_word_list(sent)
+	mark = first_markov_chain(word_array)
+	print(mark)
+	generate_sentence(mark)
 
 	# new_sent = 'Hi my name is Rinni my bestfriend is Sarin and we love each other so much'
 	# new_word_array = sentence_to_word_list(new_sent)
@@ -120,22 +123,6 @@ if __name__ == "__main__":
 	generate_sentence(markk)
 
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
