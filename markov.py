@@ -5,7 +5,7 @@ def file_to_word_list(path):
 
 	with open(path, 'r') as f:
 		contents = f.read()
-		contents = contents.replace(".", "").replace(",","").replace("*", "").replace(string.punctuation, "").replace("?", "").replace("!", "").replace(";", "").replace(":", "")
+		contents = contents.replace(".", "").replace(",","").replace("*", "").replace(string.punctuation, "").replace("?", "").replace("!", "").replace(";", "").replace(":", "").replace("-", "")
 		contents = contents.lower()
 
 	return contents.split()
@@ -41,14 +41,14 @@ def first_markov_chain(listt):
 
 
 def generate_sentence(first_mark):
-	final_sent = ""
+	final_list = []
 	times = 0
 
 	curr_word = random.choice(list(first_mark.keys()))	# gets first item in dictionary
 
 	while times < 15:
 
-		final_sent += (curr_word + " ")
+		final_list.append(curr_word)
 		dict_of_next_words = first_mark[curr_word]
 
 
@@ -69,7 +69,7 @@ def generate_sentence(first_mark):
 
 		times += 1
 
-	return final_sent
+	return " ".join(final_list)
 
 
 
@@ -78,8 +78,8 @@ if __name__ == "__main__":
 	sent = 'One fish two fish red fish blue fish'
 	word_array = sentence_to_word_list(sent)
 	mark = first_markov_chain(word_array)
-	print(mark)
-	print(generate_sentence(mark))
+	# print(mark)
+	# print(generate_sentence(mark))
 
 	# new_sent = 'Hi my name is Rinni my bestfriend is Sarin and we love each other so much'
 	# new_word_array = sentence_to_word_list(new_sent)
@@ -88,7 +88,13 @@ if __name__ == "__main__":
 	neww_sent = 'I like cats and you like cats I like dogs but you hate dogs'
 	neww_word_array = sentence_to_word_list(neww_sent)
 	markk = first_markov_chain(neww_word_array)
-	print(generate_sentence(markk))
+	# print(generate_sentence(markk))
+
+
+	lis = file_to_word_list('BreakfastAtTiffanys.txt')
+	markkk = first_markov_chain(lis)
+	print(markkk)
+	print(generate_sentence(markkk))
 
 	
 
