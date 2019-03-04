@@ -8,7 +8,7 @@ app = Flask(__name__)
 # def hello_world():
 #     return 'Hello, World!' 
 app.file_split = markov.file_to_word_list('BreakfastAtTiffanys.txt')
-app.dictionary = markov.first_markov_chain(file_split)
+app.dictionary = markov.first_markov_chain(app.file_split)
 @app.route('/')
 def hello_world():
 	return markov.generate_sentence(app.dictionary)
