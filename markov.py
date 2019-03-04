@@ -26,73 +26,19 @@ def first_markov_chain(listt):
 		if item not in markov:
 			markov[item] = {}
 
-
-	# index = 0
-	# while index <= len(listt) - 2:	# indexing all indexes before the last index
-	# 	curr_word = listt[index]
-	# 	next_word = listt[index + 1]
-
-	# 	for word_pair in markov.items():
-	# 		if curr_word == word_pair[0]:	# check if curr_word in dictionaries key
-	# 			value = word_pair[1]		# set value variable to the dictionaries value at that key
-	# 			if next_word in value:
-	# 				value[next_word] += 1	# word has come after that key before, increment its count by 1
-	# 			else:
-	# 				value[next_word] = 1	# word has not come after that key, store the count of 1
-	# 	index += 1
-	# return markov
-
+	# indexing through items in the markov chain
 	for index in range(0, (len(listt) - 1)):
 		curr_word = listt[index]
 		next_word = listt[index + 1]
 
 		value = markov[curr_word]
 
-		if next_word in value:
+		if next_word in value:		# add count of occurences by 1
 			value[next_word] += 1
 		else:
-			value[next_word] = 1
+			value[next_word] = 1	# set count of occurences to 1
 	return markov
 
-
-
-	'''
-	{'one': {'fish': 1}, 
-	 'fish': {'two': 1, 'red': 1, 'blue': 1}, 
-	 'two': {'fish': 1}, 
-	 'red': {'fish': 1}, 
-	 'blue': {'fish': 1}
-	 }
-	'''
-
-	'''
-	{'Hi': {'my': 1}, 
-	 'my': {'name': 1, 'bestfriend': 1}, 
-	 'name': {'is': 1}, 
-	 'is': {'Rinni': 1, 'Sarin': 1}, 
-	 'Rinni': {'my': 1}, 
-	 'bestfriend': {'is': 1}, 
-	 'Sarin': {'and': 1}, 
-	 'and': {'we': 1}, 
-	 'we': {'love': 1}, 
-	 'love': {'each': 1}, 
-	 'each': {'other': 1}, 
-	 'other': {'so': 1}, 
-	 'so': {'much': 1}, 
-	 'much': {}
-	 }
-	 '''
-
-	'''
-	 {'I': {'like': 2}, 
-	  'like': {'cats': 2, 'dogs': 1}, 
-	  'cats': {'and': 1, 'I': 1}, 
-	  'and': {'you': 1}, 
-	  'you': {'like': 1, 'hate': 1}, 
-	  'dogs': {'but': 1}, 
-	  'but': {'you': 1}, 
-	  'hate': {'dogs': 1}}
-	'''
 
 def generate_sentence(first_mark):
 	final_sent = ""
@@ -104,7 +50,6 @@ def generate_sentence(first_mark):
 
 		final_sent += (curr_word + " ")
 		dict_of_next_words = first_mark[curr_word]
-		# print(dict_of_next_words)
 
 
 		if len(dict_of_next_words) == 1:
