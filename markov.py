@@ -7,6 +7,7 @@ def file_to_word_list(path):
 		contents = f.read()
 		contents = contents.replace(".", "").replace(",","").replace("*", "").replace(string.punctuation, "").replace("?", "").replace("!", "").replace(";", "").replace(":", "")
 		# contents = contents.lower()
+
 	return contents.lower()split()
 
 def sentence_to_word_list(sentence):
