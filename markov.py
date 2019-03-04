@@ -6,11 +6,11 @@ def file_to_word_list(path):
 	with open(path, 'r') as f:
 		contents = f.read()
 		contents = contents.replace(".", "").replace(",","").replace("*", "").replace(string.punctuation, "").replace("?", "").replace("!", "").replace(";", "").replace(":", "")
-
+		# contents = contents.lower()
 	return contents.split()
 
 def sentence_to_word_list(sentence):
-	return sentence.split()
+	return sentence.lower().split()
 
 def first_markov_chain(listt):
 	'''Reads from a sentence and returns a ditcionary with:
@@ -115,7 +115,7 @@ def generate_sentence(first_mark):
 
 
 if __name__ == "__main__":
-	sent = 'one fish two fish red fish blue fish'
+	sent = 'One fish two fish red fish blue fish'
 	word_array = sentence_to_word_list(sent)
 	mark = first_markov_chain(word_array)
 	print(mark)
