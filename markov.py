@@ -85,7 +85,7 @@ def generate_sentence(first_mark):
 
 	curr_word = random.choice(list(first_mark.keys()))	# gets first item in dictionary
 
-	while times < 10:
+	while times < 5:
 
 		final_sent += (curr_word + " ")
 		dict_of_next_words = first_mark[curr_word]
