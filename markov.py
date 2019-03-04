@@ -89,7 +89,7 @@ def generate_sentence(first_mark):
 
 		final_sent += (curr_word + " ")
 		dict_of_next_words = first_mark[curr_word]
-		print(dict_of_next_words)
+		# print(dict_of_next_words)
 
 
 		if len(dict_of_next_words) == 1:
