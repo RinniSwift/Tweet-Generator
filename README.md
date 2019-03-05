@@ -66,6 +66,8 @@ This is a repo that randomly generates tweets using Markov models.
 *Adam Bede book*
 4. **[AnnaKerenina.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/AnnaKerenina.txt)**
 *Anna Kerenina book*
+5. **[markov.py]**(https://github.com/RinniSwift/Tweet-Generator/blob/master/markov.py)
+*file includes creating dictionaries with a list and populating histograms for next words count.*
 
 ## virtualenv
 *web environmental setup with virtualenv tool*
