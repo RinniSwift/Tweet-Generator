@@ -27,7 +27,7 @@ def first_markov_chain(listt):
 			markov[item] = {}
 
 	# indexing through items in the markov chain
-	for index in range(0, (len(listt) - 1)):
+	for index in range(len(listt) - 1):
 		curr_word = listt[index]
 		next_word = listt[index + 1]
 
@@ -38,6 +38,94 @@ def first_markov_chain(listt):
 		else:
 			value[next_word] = 1	# set count of occurences to 1
 	return markov
+
+def sec_markov_chain(listt):
+	dictionary = {}
+
+	for index in range(len(listt) - 2):
+		curr_word = listt[index]
+		curr_next_word = listt[index + 1]
+		next_word = listt[index + 2]
+
+		dictionary[(curr_word, curr_next_word)] = {}
+
+	'''dictionary =  {('one', 'fish'): {}, 
+ 					  ('fish', 'two'): {}, 
+					  ('two', 'fish'): {}, 
+					  ('fish', 'red'): {}, 
+					  ('red', 'fish'): {}, 
+					  ('fish', 'blue'): {}} '''
+
+	for index in range(len(listt) - 2):
+		curr_word = listt[index]
+		curr_next_word = listt[index + 1]
+		next_word = listt[index + 2]
+
+		value = dictionary[(curr_word, curr_next_word)]
+		if next_word in value: # if word in dictionary
+			value[next_word] += 1
+		else: # word not in dictionary
+			value[next_word] = 1
+
+	'''{('one', 'fish'): {'two': 1}, 
+		('fish', 'two'): {'fish': 1}, 
+		('two', 'fish'): {'red': 1}, 
+		('fish', 'red'): {'fish': 1}, 
+		('red', 'fish'): {'blue': 1}, 
+		('fish', 'blue'): {'fish': 1}, 
+		('blue', 'fish'): {'one': 1}, 
+		('fish', 'one'): {'fish': 1}}'''
+	return dictionary
+
+
+def sec_markov_sentence_generator(markov):
+	
+	final_list = []
+	times = 0
+
+	sample_first = random.choice(list(markov.keys()))
+	final_list.append(sample_first[0])
+	final_list.append(sample_first[1])
+	print(final_list)
+
+	# last_tuple = ((final_list[-2], final_list[-1]))
+	# print(last_tuple)
+	# hist = markov[last_tuple]
+	# print("first item in histogram: {}".format(list(hist.keys())[0]))
+	# final_list.append(list(hist.keys())[0])
+	# print(final_list)
+	# print(((final_list[-2], final_list[-1])))
+
+	while times < 13:
+		last_tuple = ((final_list[-2], final_list[-1]))
+
+
+		if last_tuple in markov:
+			hist = markov[last_tuple]
+			if len(hist) > 1:
+				count = 0
+
+				random_number = random.random()
+				for key, value in hist.items():
+					count += (value / len(hist))
+					if count >= random_number:
+						final_list.append(key)
+
+			elif len(hist) == 1:
+				final_list.append(list(hist.keys())[0])
+
+
+		else:
+			print("no")
+		times += 1
+
+	print(final_list)
+
+
+
+
+
+
 
 
 def generate_sentence(first_mark):
@@ -78,7 +166,7 @@ def generate_sentence(first_mark):
 
 
 if __name__ == "__main__":
-	sent = 'One fish two fish red fish blue fish'
+	sent = 'one fish two fish red fish blue fish'
 	word_array = sentence_to_word_list(sent)
 	mark = first_markov_chain(word_array)
 	# print(mark)
@@ -96,8 +184,19 @@ if __name__ == "__main__":
 
 	lis = file_to_word_list('BreakfastAtTiffanys.txt')
 	markkk = first_markov_chain(lis)
-	print(markkk)
-	print(generate_sentence(markkk))
+	# print(markkk)
+	# print(generate_sentence(markkk))
+
+
+	list_sec_mark = file_to_word_list('BreakfastAtTiffanys.txt')
+	sec_marks = sec_markov_chain(list_sec_mark)
+	sec_sentence = sec_markov_sentence_generator(sec_marks)
+	# print(sec_sentence)
+	# print(sec_marks)
+	# print(generate_sentence(sec_marks))
+
+
+
 
 	
 
