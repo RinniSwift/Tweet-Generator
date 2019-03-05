@@ -57,12 +57,15 @@ def generate_sentence(first_mark):
 
 		elif len(dict_of_next_words) > 1:
 			# sample word choice
+
 			count = 0
+			this = ""
 			random_number = random.random()
 			for key, value in dict_of_next_words.items():
 				count += (value / len(dict_of_next_words))
 				if count >= random_number:
-					curr_word = key
+					this = key
+			curr_word = this
 
 		elif len(dict_of_next_words) == 0:
 			curr_word = random.choice(list(first_mark.keys()))
