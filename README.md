@@ -56,6 +56,16 @@ This is a repo that randomly generates tweets using Markov models.
 4. **[hashtable_test.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/hashtable_test.py)**
 *test cases for hash table.*
 
+## markov resources
+*files include*
+1. **[concat_file.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/concat_files.py)**
+*python script that adds files to a script*
+2. **[corupus.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/corpus.txt)**
+*collection of text from AdamBede.txt and AnnaKerenina.txt*
+3. **[AdamBede.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/AdamBede.txt)**
+*Adam Bede book*
+4. **[AnnaKerenina.txt](https://github.com/RinniSwift/Tweet-Generator/blob/master/AnnaKerenina.txt)**
+*Anna Kerenina book*
 
 ## virtualenv
 *web environmental setup with virtualenv tool*
