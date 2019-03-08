@@ -1,0 +1,24 @@
+1. What are the key features of the application? Are these clearly separated into their own files, classes, and/or modules?
+
+	Tweet Generator's key features is to create a random sentence based on a text file. To do this, we create a file that will store all the methods to create and generate the sentence. 
+	We take in a large amount of text and structure it into a data structure. In this case, We are creating a markov model(a dictiionary with the key being the key word and the value being the next words in a histogram format) { key_word: {next: 1, next_one: 3, next_word: 1} } we then create sentences by analyzing the most frequent used 'next' words. 
+
+2. Are the names of files, modules, functions, and variables appropriate and accurate? Would a new programmer be able to understand the names without too much contextual knowledge?
+	
+	Yes. There are many different file names which create their own data structure and different functions inside each that take one responsibility. File names describe what data structure it creates. Function names inside each file describe what it is doing.
+
+3. What are the scopes of variables and are they appropriate for their use case? If there are global variables, why are they needed? Scope of variables are mostly function based.
+
+	Using scope variables and global varibales are very important when declaring and updating them. Global variables that we use are keeping track of main features of the class. Scope variables we use are variables that are used withing a scope such as a functions scope - variables can only be updated withing the scope of where it was declared. With scope and global variables, the app architecture will be clean.
+
+4. Are the functions small and clearly specified, with as few side effects as possible?
+
+	Yes. Each function has a specific task it does
+
+5. Are there functions that could be better organized in an Object-Oriented Programming style by defining them as methods of a class?
+
+	Yes. When we are creating a large data structure, we can have the class be that data structure and methods that can be called on the data structures be the methods/functions inside of the class.
+
+6. Can files be used as both modules and as scripts?
+
+	Yes. A module is just a .py file which has functions iniside it. And we call that module in another python file by using the 'import' - with this we can use all the functions and global variables of that module. A script is a text file containing the programming statements that compromise the python program. 
