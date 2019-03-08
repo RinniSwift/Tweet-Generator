@@ -37,6 +37,12 @@ This is a repo that randomly generates tweets using Markov models.
 *The above file demonstrates*
 1. how to return complete words that start with a given letter or letter sequence
 
+## [appArchitectureQA.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/appArchitectureQA.txt)
+*The above file demonstrates:*
+1. key features of applicaition architecture
+2. global variables and scoped variables
+3. modules and scripts in python
+
 
 ## [appArchitect](https://github.com/RinniSwift/Tweet-Generator/tree/master/AppArchitecture)
 1. **[dictogram.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/AppArchitecture/dictogram.py)**
