@@ -22,3 +22,7 @@
 6. Can files be used as both modules and as scripts?
 
 	Yes. A module is just a .py file which has functions iniside it. And we call that module in another python file by using the 'import' - with this we can use all the functions and global variables of that module. A script is a text file containing the programming statements that compromise the python program. 
+
+7. Do modules all depend on each other or can they be used independently?
+
+	Modules can be used independently
