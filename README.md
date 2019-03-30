@@ -1,6 +1,9 @@
 # Tweet Generator
 
-This is a repo that randomly generates tweets using Markov models.
+This is a repo that randomly generates tweets(sentences) using Markov models.\
+live website to generate random tweets: [Tweet Generator](https://salty-scrubland-18888.herokuapp.com/)\
+Random tweets from Anna kerinina book and Adam Bede book.
+
 
 ## [sample.py](https://github.com/RinniSwift/Tweet-Generator/blob/master/sample.py)
 *The above file demonstrates:*
